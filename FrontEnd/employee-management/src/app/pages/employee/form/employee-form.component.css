@@ -1,0 +1,8 @@
+.field {
+    margin: 5px !important;
+}
+
+#mat-mdc-dialog-0 > div > div > app-employee-form > div {
+    width: 650px !important;
+    height: 650px !important;
+}

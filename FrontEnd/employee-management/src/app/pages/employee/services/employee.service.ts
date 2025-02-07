@@ -19,22 +19,18 @@ export class EmployeeService {
   }
 
   getForm(dados: IEmployee) {
-    return this.http.get<IEmployee>(`${apiUrl}/Form/${dados.id}`);
+    return this.http.get<IEmployee>(`${apiUrl}/v1/employees/${dados.id}`);
   }  
 
   insert(dados: IEmployee) {
-    return this.http.post<IEmployee>(apiUrl, dados);
-  }
-
-  disable(dados: IEmployee) {
-    return this.http.put<IEmployee>(`${apiUrl}/Disable`, dados);
+    return this.http.post<IEmployee>(`${apiUrl}/v1/employees`, dados);
   }
 
   update(dados: IEmployee) {
-    return this.http.put<IEmployee>(`${apiUrl}`, dados);
+    return this.http.put<IEmployee>(`${apiUrl}/v1/employees`, dados);
   }
 
   delete(dados: IEmployee) {
-    return this.http.delete<IEmployee>(`${apiUrl}/${dados.id}`);
+    return this.http.delete<IEmployee>(`${apiUrl}/v1/employees/${dados.id}`);
   }
 }

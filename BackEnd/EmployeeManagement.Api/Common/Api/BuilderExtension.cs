@@ -3,6 +3,7 @@ using EmployeeManagement.Api.Handlers;
 using EmployeeManagement.Api.Models;
 using EmployeeManagement.Core;
 using EmployeeManagement.Core.Handlers;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using static System.Net.WebRequestMethods;
@@ -21,6 +22,11 @@ namespace EmployeeManagement.Api.Common.Api
                 ?? string.Empty;
             Configuration.BackendUrl = builder.Configuration.GetValue<string>("BackendUrl") ?? string.Empty;
             Configuration.FrontendUrl = builder.Configuration.GetValue<string>("FrontendUrl") ?? string.Empty;            
+        }
+
+        public static void AddValidation(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly, includeInternalTypes: true);            
         }
 
         public static void AddDocumentation(this WebApplicationBuilder builder)

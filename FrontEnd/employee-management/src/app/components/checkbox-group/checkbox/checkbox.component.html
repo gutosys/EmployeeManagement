@@ -1,0 +1,10 @@
+<!-- <ion-item (click)="checkboxGroup.toggleValue(value)" button detail="false">
+  <ion-label>{{ label }}</ion-label>
+  <ion-checkbox [checked]="checkboxGroup.isSelected(value)"></ion-checkbox>
+</ion-item> -->
+
+<!-- <mat-checkbox class="example-margin" (change)="onChange($event)" [value]="value" [checked]="checkboxGroup.isSelected(value)">
+  {{label}}</mat-checkbox> -->
+
+  <mat-checkbox class="example-margin" (change)="checkboxGroup.toggleValue(value)" [checked]="checkboxGroup.isSelected(value)" [value]="value">
+    {{label}}</mat-checkbox>
