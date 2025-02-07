@@ -4,6 +4,8 @@ using EmployeeManagement.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddConfiguration();
+
+//OBS:Camada de Segurança, comentado para fins de verificação de implementação
 builder.AddSecurity();
 builder.AddDataContexts();
 builder.AddCrossOrigin();

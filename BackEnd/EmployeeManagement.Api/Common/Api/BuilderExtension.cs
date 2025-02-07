@@ -5,6 +5,7 @@ using EmployeeManagement.Core;
 using EmployeeManagement.Core.Handlers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.WebRequestMethods;
 
 namespace EmployeeManagement.Api.Common.Api
 {
@@ -58,7 +59,8 @@ namespace EmployeeManagement.Api.Common.Api
                     policy => policy
                         .WithOrigins([
                             Configuration.BackendUrl,
-                        Configuration.FrontendUrl
+                            Configuration.FrontendUrl,
+                            "http://localhost:4200"
                         ])
                         .AllowAnyMethod()
                         .AllowAnyHeader()
